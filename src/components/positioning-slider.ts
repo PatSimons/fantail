@@ -262,6 +262,7 @@ function initSlider(slider: HTMLElement) {
   //// Function to handle slider transitions.
   function slideAction(dir: 'next' | 'prev' | null, index?: number | null) {
     console.log('Fnc slideAction called');
+
     // Disallow Prev/Next condition
     if (index && index > count && !allowNext) return;
     if (index && index < count && !allowPrev) return;
@@ -345,7 +346,6 @@ function initSlider(slider: HTMLElement) {
         { opacity: 0 },
         { opacity: 1, duration: 0.25, stagger: 0.1, delay: 0.1 }
       );
-
       tl_slideIn.timeScale(1).play();
     }
 
@@ -375,6 +375,8 @@ function initSlider(slider: HTMLElement) {
       gsap.set(radioButtons, { opacity: 0 });
       tl_slideOut.timeScale(4).play();
     }
+    // Positioning only
+    infoButtonaddListeners();
   } // End: function Slide Action
 
   //// Function to check slide index and update navigation accordingly.
@@ -494,16 +496,57 @@ function initSlider(slider: HTMLElement) {
     }
   }
 
+  //// Function to add listeners to Info Button
+  function infoButtonaddListeners() {
+    // set Info Button listeners
+    const infoButton = document.querySelector('[cs-el="infoButton"]');
+    if (infoButton) {
+      const activeSlide = document.querySelector('[cs-el="slide"].is-active');
+      const infoBlock = activeSlide?.querySelector('[cs-el="infoBlock"]');
+      let isOpen = false;
+      if (infoBlock) {
+        const tl_openInfo = gsap.timeline({ paused: true });
+        tl_openInfo.fromTo(infoButton, { autoAlpha: 1 }, { autoAlpha: 0, duration: 0.1 });
+        tl_openInfo.to(infoBlock, { autoAlpha: 1, duration: 0.25 }, '<');
+
+        infoButton.addEventListener('click', () => {
+          tl_openInfo.timeScale(1).play();
+          isOpen = true;
+        });
+        document.addEventListener('keypress', (event) => {
+          if (event.key === 'i' && !isOpen) {
+            tl_openInfo.timeScale(1).play();
+            isOpen = true;
+          }
+          if (event.key === 'x' && isOpen) {
+            isOpen = false;
+            tl_openInfo.timeScale(2).reverse();
+          }
+        });
+        const closeButtons = document.querySelectorAll<HTMLElement>(
+          '[cs-el="closeInfo"],[cs-el="infoBlock"]'
+        );
+        if (closeButtons.length > 0) {
+          closeButtons.forEach((el) => {
+            el.addEventListener('click', () => {
+              tl_openInfo.timeScale(2).reverse();
+            });
+          });
+        }
+      }
+    }
+  }
+
   //// function setCover
   function setCover(cover: HTMLElement) {
     console.log('Fnc setCover called');
     // Make sure cover is visible
     gsap.to(cover, { autoAlpha: 1 });
 
-    if (!toggleControls) {
-      setupToggleControls();
-    }
-    tl_toggleControls.progress(0);
+    // if (!toggleControls) {
+    //   setupToggleControls();
+    // }
+    // tl_toggleControls.progress(0);
 
     const startSliderBtn = slider.querySelector('[cs-el="slider-start"]');
     startSliderBtn?.addEventListener('click', () => {
