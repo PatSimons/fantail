@@ -514,6 +514,20 @@ function initSlider(slider: HTMLElement) {
           isOpen = true;
         });
         document.addEventListener('keypress', (event) => {
+          // switch (event.key) {
+          //   case 'ArrowRight':
+          //   case 'ArrowLeft':
+          //     event.preventDefault(); // Prevent default behavior for these keys
+          //     break;
+          //   default:
+          //     break;
+          // }
+          // if (event.key === 'ArrowLeft') {
+          //   goPrev(); // Call your goNext function
+          // }
+          // if (event.key === 'ArrowRight') {
+          //   goNext(); // Call your goNext function
+          // }
           if (event.key === 'i' && !isOpen) {
             tl_openInfo.timeScale(1).play();
             isOpen = true;
