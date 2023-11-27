@@ -4639,6 +4639,16 @@
               tl_openInfo.timeScale(2).reverse();
             }
           });
+          document.addEventListener("keydown", (event) => {
+            switch (event.key) {
+              case "ArrowRight":
+              case "ArrowLeft":
+                event.preventDefault();
+                break;
+              default:
+                break;
+            }
+          });
           const closeButtons = document.querySelectorAll(
             '[cs-el="closeInfo"],[cs-el="infoBlock"]'
           );

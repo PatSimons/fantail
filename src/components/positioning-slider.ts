@@ -514,20 +514,6 @@ function initSlider(slider: HTMLElement) {
           isOpen = true;
         });
         document.addEventListener('keypress', (event) => {
-          // switch (event.key) {
-          //   case 'ArrowRight':
-          //   case 'ArrowLeft':
-          //     event.preventDefault(); // Prevent default behavior for these keys
-          //     break;
-          //   default:
-          //     break;
-          // }
-          // if (event.key === 'ArrowLeft') {
-          //   goPrev(); // Call your goNext function
-          // }
-          // if (event.key === 'ArrowRight') {
-          //   goNext(); // Call your goNext function
-          // }
           if (event.key === 'i' && !isOpen) {
             tl_openInfo.timeScale(1).play();
             isOpen = true;
@@ -537,6 +523,24 @@ function initSlider(slider: HTMLElement) {
             tl_openInfo.timeScale(2).reverse();
           }
         });
+        document.addEventListener('keydown', (event) => {
+          // console.log(event.key);
+          // if (event.key === 'ArrowRight') {
+          //   goNext();
+          // }
+          // if (event.key === 'ArrowRight') {
+          //   goPrev();
+          // }
+          switch (event.key) {
+            case 'ArrowRight':
+            case 'ArrowLeft':
+              event.preventDefault(); // Prevent default behavior for these keys
+              break;
+            default:
+              break;
+          }
+        });
+
         const closeButtons = document.querySelectorAll<HTMLElement>(
           '[cs-el="closeInfo"],[cs-el="infoBlock"]'
         );
