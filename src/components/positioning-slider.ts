@@ -541,9 +541,7 @@ function initSlider(slider: HTMLElement) {
           }
         });
 
-        const closeButtons = document.querySelectorAll<HTMLElement>(
-          '[cs-el="closeInfo"],[cs-el="infoBlock"]'
-        );
+        const closeButtons = document.querySelectorAll<HTMLElement>('[cs-el="closeInfo"]');
         if (closeButtons.length > 0) {
           closeButtons.forEach((el) => {
             el.addEventListener('click', () => {
