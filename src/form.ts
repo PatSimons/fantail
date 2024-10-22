@@ -112,17 +112,27 @@ window.Webflow.push(() => {
               activeCount++; // Increase count when activating
             }
             gsap.to(el, { opacity: 1, duration: 1 });
+            const completedIcon = el.closest('section')?.querySelector('[cs-el="completed"]');
+            if (completedIcon) {
+              gsap.set(completedIcon, { autoAlpha: 0 });
+            }
 
             if (!isActive && activeCount === 3) {
               const allInactiveElements = parentElement?.querySelectorAll(':not(.is-active)');
               allInactiveElements?.forEach((el) => {
                 el.classList.add('is-disabled');
               });
+              if (completedIcon) {
+                gsap.to(completedIcon, { autoAlpha: 1, scale: 1.5, ease: 'back.out' });
+              }
             } else {
               const allInactiveElements = parentElement?.querySelectorAll('.is-disabled');
               allInactiveElements?.forEach((el) => {
                 el.classList.remove('is-disabled');
               });
+              if (completedIcon) {
+                gsap.to(completedIcon, { autoAlpha: 0, scale: 1, ease: 'back.in' });
+              }
             }
           }
         }
