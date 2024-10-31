@@ -53,7 +53,8 @@
   },
   "dependencies": {
     "@finsweet/ts-utils": "^0.40.0",
-    "gsap": "^3.12.2"
+    "gsap": "^3.12.2",
+    "sortablejs": "^1.15.3"
   },
   "engines": {
     "pnpm": ">=8"

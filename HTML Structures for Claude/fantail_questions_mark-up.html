@@ -1,0 +1,140 @@
+<!-- HTML structure/markup: Question types -->
+<!-- HTML structure/markup: General Question Wrapper: Top -->
+<div class="tool-form" cs-el="formBlock" data-tool="[tool-name_segment-name_field-name]" data-question-type="[question-type]">
+    <div class="tool-form_details-wrap">
+        <div class="tool-form_details" cs-el="toolName">[TOOL NAME]</div>
+        <div class="tool-form_details" cs-el="segmentName">[SEGMENT NAME]</div>
+        <div class="tool-form_details" cs-el="fieldName">[FIELD NAME]</div>
+    </div>
+    <div class="container-small">
+        <div class="padding-section-large">
+            <div class="tool-form_header">
+                <div class="tool-form_question heading-style-h3">[QUESTION]</div>
+                <div class="tool-form_instruction-wrap">[QUESTION-INSTRUCTIONAL-TEXT]</div>
+            </div>
+            <div class="tool-form_body" cs-el="formBody">
+
+                <!-- START: HTML structure/markup: Multiple Choice question type -->
+                <label cs-el="radioBtn" class="tool-form_rc-field w-radio" data-explainer="[EXPLAINER]">
+                    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom hide w-radio-input"></div><input
+                        type="radio" name="[question-reference]" id="[valueA]" data-name="[valueA]" style="opacity:0;position:absolute;z-index:-1"
+                        value="[valueA]"><span class="tool-form_button-div w-form-label" for="[valueA]">[ValueA]</span>
+                </label>
+                <label cs-el="radioBtn" class="tool-form_rc-field w-radio" data-explainer="[EXPLAINER]">
+                    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom hide w-radio-input"></div><input
+                        type="radio" name="[question-reference]" id="[valueB]" data-name="[valueB]" style="opacity:0;position:absolute;z-index:-1"
+                        value="[valueB]"><span class="tool-form_button-div w-form-label" for="[valueB]">[ValueB]</span>
+                </label>
+                <label cs-el="radioBtn" class="tool-form_rc-field w-radio" data-explainer="[EXPLAINER]">
+                    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom hide w-radio-input"></div><input
+                        type="radio" name="[question-reference]" id="[valueC]" data-name="[valueC]" style="opacity:0;position:absolute;z-index:-1"
+                        value="[valueC]"><span class="tool-form_button-div w-form-label" for="[valueC]">[ValueC]</span>
+                </label>
+                <label cs-el="radioBtn" class="tool-form_rc-field w-radio" data-explainer="[EXPLAINER]">
+                    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom hide w-radio-input"></div><input
+                        type="radio" name="[question-reference]" id="[valueD]" data-name="[valueD]" style="opacity:0;position:absolute;z-index:-1"
+                        value="[valueD]"><span class="tool-form_button-div w-form-label" for="[valueD]">[ValueD]</span>
+                </label>
+                <label cs-el="radioBtn" class="tool-form_rc-field w-radio" data-explainer="[EXPLAINER]">
+                    <div class="w-form-formradioinput w-form-formradioinput--inputType-custom hide w-radio-input"></div><input
+                        type="radio" name="[question-reference]" id="[valueE]" data-name="[valueE]" style="opacity:0;position:absolute;z-index:-1"
+                        value="[valueE]"><span class="tool-form_button-div w-form-label" for="[valueE]">[ValueE]</span>
+                </label>
+                <!-- END: HTML structure/markup: Multiple Choice question type -->
+                
+                <!-- START: HTML structure/markup: Slider question type -->
+                <div cs-el="rangeWrap" class="tool-form_input-range-wrap" >
+                    <div cs-el="a" class="tool-form_button-div" data-explainer="[EXPLAINER]">
+                        [VALUE A]
+                    </div>
+                    <input id="[value-a_value-b]" name="[value-a_value-b]" type="range" min="-100" max="100" cs-el="rangeInput"
+                        class="range_track" value="0">
+                    <div cs-el="b" class="tool-form_button-div" data-explainer="[EXPLAINER]">
+                        [VALUE B]
+                    </div>
+                </div>
+                <div cs-el="rangeWrap" class="tool-form_input-range-wrap">
+                    <div cs-el="a" class="tool-form_button-div" data-explainer="[EXPLAINER]">
+                        [VALUE A]
+                    </div>
+                    <input id="[value-a_value-b]" name="[value-a_value-b]" type="range" min="-100" max="100" cs-el="rangeInput"
+                        class="range_track" value="0">
+                    <div cs-el="b" class="tool-form_button-div" data-explainer="[EXPLAINER]">
+                        [VALUE B]
+                    </div>
+                </div>
+                <div cs-el="rangeWrap" class="tool-form_input-range-wrap">
+                    <div cs-el="a" class="tool-form_button-div" data-explainer="[EXPLAINER]">
+                        [VALUE A]
+                    </div>
+                    <input id="[value-a_value-b]" name="[value-a_value-b]" type="range" min="-100" max="100" cs-el="rangeInput"
+                        class="range_track" value="0">
+                    <div cs-el="b" class="tool-form_button-div" data-explainer="[EXPLAINER]">
+                        [VALUE B]
+                    </div>
+                </div>
+                <div cs-el="rangeWrap" class="tool-form_input-range-wrap">
+                    <div cs-el="a" class="tool-form_button-div" data-explainer="[EXPLAINER]">
+                        [VALUE A]
+                    </div>
+                    <input id="[value-a_value-b]" name="[value-a_value-b]" type="range" min="-100" max="100" cs-el="rangeInput"
+                        class="range_track" value="0">
+                    <div cs-el="b" class="tool-form_button-div" data-explainer="[EXPLAINER]">
+                        [VALUE B]
+                    </div>
+                </div>
+                <div cs-el="rangeWrap" class="tool-form_input-range-wrap">
+                    <div cs-el="a" class="tool-form_button-div" data-explainer="[EXPLAINER]">
+                        [VALUE A]
+                    </div>
+                    <input id="[value-a_value-b]" name="[value-a_value-b]" type="range" min="-100" max="100" cs-el="rangeInput"
+                        class="range_track" value="0">
+                    <div cs-el="b" class="tool-form_button-div" data-explainer="[EXPLAINER]">
+                        [VALUE B]
+                    </div>
+                </div>
+                <!-- END: HTML structure/markup: Slider question type -->
+
+                <!-- START: HTML structure/markup: Top 3 question type -->
+                <div cs-el="activeElms" class="tool-form_active-elms">
+                </div>
+                <label cs-el="checkBox" class="w-checkbox tool-form_rc-field" style="opacity: 1;" data-explainer="[EXPLAINER]">
+                    <div cs-el="checkBoxIndex" class="tool-form_index-wrap"></div>
+                    <div class="w-checkbox-input w-checkbox-input--inputType-custom hide"></div><input type="checkbox" id="[valueA]"
+                        name="[valueA]" data-name="[valueA]" value="1" style="opacity:0;position:absolute;z-index:-1"><span
+                        class="tool-form_button-div w-form-label" for="checkbox">[ValueA]</span>
+                </label>
+                <label cs-el="checkBox" class="w-checkbox tool-form_rc-field" style="opacity: 1;" data-explainer="[EXPLAINER]">
+                    <div cs-el="checkBoxIndex" class="tool-form_index-wrap"></div>
+                    <div class="w-checkbox-input w-checkbox-input--inputType-custom hide"></div><input type="checkbox" id="[valueB]"
+                        name="[valueB]" data-name="[valueB]" value="1" style="opacity:0;position:absolute;z-index:-1"><span
+                        class="tool-form_button-div w-form-label" for="checkbox">[ValueB]</span>
+                </label>
+                <label cs-el="checkBox" class="w-checkbox tool-form_rc-field" style="opacity: 1;" data-explainer="[EXPLAINER]">
+                    <div cs-el="checkBoxIndex" class="tool-form_index-wrap"></div>
+                    <div class="w-checkbox-input w-checkbox-input--inputType-custom hide"></div><input type="checkbox" id="[valueC]"
+                        name="[valueC]" data-name="[valueC]" value="1" style="opacity:0;position:absolute;z-index:-1"><span
+                        class="tool-form_button-div w-form-label" for="checkbox">[ValueC]</span>
+                </label>
+                <label cs-el="checkBox" class="w-checkbox tool-form_rc-field" style="opacity: 1;" data-explainer="[EXPLAINER]">
+                    <div cs-el="checkBoxIndex" class="tool-form_index-wrap"></div>
+                    <div class="w-checkbox-input w-checkbox-input--inputType-custom hide"></div><input type="checkbox" id="[valueD]"
+                        name="[valueD]" data-name="[valueD]" value="1" style="opacity:0;position:absolute;z-index:-1"><span
+                        class="tool-form_button-div w-form-label" for="checkbox">[ValueD]</span>
+                </label>
+                <label cs-el="checkBox" class="w-checkbox tool-form_rc-field" style="opacity: 1;" data-explainer="[EXPLAINER]">
+                    <div cs-el="checkBoxIndex" class="tool-form_index-wrap"></div>
+                    <div class="w-checkbox-input w-checkbox-input--inputType-custom hide"></div><input type="checkbox" id="[valueE]"
+                        name="[valueE]" data-name="[valueE]" value="1" style="opacity:0;position:absolute;z-index:-1"><span
+                        class="tool-form_button-div w-form-label" for="checkbox">[ValueE]</span>
+                </label>
+                <!-- END: HTML structure/markup: Top 3 question type -->
+
+            <!-- HTML structure/markup: General Question Wrapper: Bottom -->
+            </div>
+            <div class="tool-form_footer">
+                <div cs-el="explainer" class="explainer"></div>
+            </div>
+        </div>
+    </div>
+</div>
